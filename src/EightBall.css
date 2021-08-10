@@ -1,0 +1,14 @@
+.EightBall {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+}
+
+.reset-btn {
+    display: flex;
+    justify-content: center;
+}

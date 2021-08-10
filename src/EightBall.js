@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import "./EightBall.css";
 
-
+/** EightBall: creates div that returns random answer on each click */
 function EightBall(props) {
     const { answers } = props;
 
+    // can use single piece of state with answer instead of 2
     const [ color, setColor ] = useState("black");
     const [ msg, setMsg ] = useState("Think of a Question"); 
 
@@ -14,14 +16,25 @@ function EightBall(props) {
         setMsg(randomAnswer.msg);
     }
 
+    function reset() {
+        setColor("black");
+        setMsg("Think of a Question");
+    }
+
     const colors = {
         color: "white",
         backgroundColor: color
     };
 
     return (
-        <div className="EightBall" style={colors} onClick={shake}>
-            <b> {msg} </b>
+        <div id="wrapper">   
+            <div className="EightBall" style={colors} onClick={shake}>
+                <b> {msg} </b>
+            </div>
+
+            <div className="reset-btn">
+                <button onClick={reset}>Reset</button>
+            </div>
         </div>
     )
 }
